@@ -1,0 +1,17 @@
+import java.awt.Color;
+import info.gridworld.grid.Location;
+public class AllRandomRunner {
+  public static void main(String [] args){
+  ActorWorld world = new ActorWorld();
+    RandomBug[] bug= new RandomBug[10];
+    for(int i = 0; i<bug.length; i++){
+      int red = (int) Math.random()*256;
+      int green = (int) Math.random()*256;
+      int blue = (int) Math.random()*256;
+      bug[i] = new RandomBug(new Color(red,green,blue));
+      int r = (int) Math.random()*(world.getGrid().getNumRows());
+      int c = (int) Math.random()*(world.getGrid().getNumCols());
+      world.add(new Location(r,c), bug[i]);
+  }
+  world.show();
+}
