@@ -1,0 +1,7 @@
+public class RandomBug extends Bug {
+  public RandomBug(Color c){
+    super(c);
+    int direction = (int) Math.random()*361;
+    setDirection((direction/Location.HALF_RIGHT)*Location.HALF_RIGHT);
+  }
+}
